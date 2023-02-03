@@ -1,0 +1,12 @@
+<button
+  class="button button--{{ color }}"
+  [ngClass]="{
+    'button--small': size === 'small',
+    'button--large': size === 'large',
+    'button--active': isActive
+  }"
+  [attr.disabled]="isDisabled ? '' : null"
+>
+  <span class="button__title">{{ title }}</span>
+</button>
+
