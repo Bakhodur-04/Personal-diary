@@ -1,0 +1,25 @@
+<!-- <app-entry [isSave]="isSave"></app-entry> -->
+
+<div class="entry">
+    <div class="entry__info">
+        <span class="entry__time">Время создания: </span>
+
+        <div class="entry__hero">
+            <div id="editorjs" class="entry__text"></div>
+            <!-- <textarea class="entry__text" rows="6" cols="125">Здесь отображается основной текст записи</textarea> -->
+        </div>
+    </div>
+
+    <figure class="entry__figure">
+        <img src="" alt="Тут появляется прикрепленное изображение если оно есть в записи" 
+            width="120px" height="120px"
+            class="entry__img">
+    </figure>
+</div>
+
+
+<app-button
+    [color]="'default'"
+    [title]="'Сохранить'" 
+    (click)="onSubmit()"
+></app-button>

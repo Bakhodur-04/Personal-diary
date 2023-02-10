@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EntryComponent } from './entry.component';
+import { TopBarComponent } from './top-bar.component';
 import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
-  declarations: [
-    EntryComponent
-  ],
+  declarations: [TopBarComponent],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-    EntryComponent
+    TopBarComponent
   ]
 })
-
-export class EntryModule { }
+export class TopBarModule { }

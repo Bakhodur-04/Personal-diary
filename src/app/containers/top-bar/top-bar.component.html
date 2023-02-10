@@ -1,0 +1,24 @@
+<header *ngIf="auth.isLogin" class="header">
+    <div class="container">
+        <nav class="nav">
+            <ul class="list">
+                <li class="item">
+                    <a 
+                        routerLink="/diary" 
+                        routerLinkActive="router-link-active"
+                        [routerLinkActiveOptions]="{exact: true}"
+                        class="home"
+                    >Гланая</a>
+                </li>
+
+                <li class="item">
+                    <a 
+                        routerLink="/edit"
+                        routerLinkActive="router-link-active"
+                        class="home"
+                    >Создать</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,20 @@
+<form action="" class="form">
+    <fieldset class="form__register">
+        <legend class="form__legend">Регистрация</legend>
+
+        <label for="email-login" class="form__label">Почта</label>
+        <input id="email-login" class="form__input" type="email" name="email" placeholder="Почта" [(ngModel)]="email">
+
+        <label for="pass-login" class="form__label">Пароль</label>
+        <input id="pass-login" class="form__input" type="password" name="password" placeholder="Пароль" [(ngModel)]="password">
+        <app-button [color]="'primary'" [title]="'Зарегистрироваться'" (click)="register()"></app-button>
+    </fieldset>
+
+
+    <p class="form__info">
+        <span class="form__reg">Есть аккаунт? 
+            <a routerLink="/login">Войти</a>
+        </span>
+    </p>
+</form>
+

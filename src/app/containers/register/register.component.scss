@@ -1,0 +1,25 @@
+.form {
+    &__register {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        border: none;
+        margin-bottom: 20px;
+    }
+
+    &__label {
+        margin-top: 20px;
+    }
+
+    &__input {
+        font-size: 14px;
+        padding: 12px 20px;
+        border: 1px solid #dddddd;
+        border-radius: 10px;
+    }
+
+    app-button {
+        width: 194px;
+        margin-top: 20px;
+    }
+}

@@ -1,7 +1,14 @@
 <div class="diary">
+    <app-button [title]="'Выйти'" (click)="logOut()"></app-button>
+
     <ul class="diary__list">
-        <li class="diary__item">
-            <app-entry class="diary__entry"></app-entry>
+        <li class="diary__item" *ngFor="let entry of entries; let i = index">
+            <app-entry id="editorjs1" class="diary__entry" 
+                *ngIf="entries"
+                
+                [entryData]="entries[i]"
+            ></app-entry>
         </li>
     </ul>
 </div>
+<!-- [routerLink]="['/edit', ]" -->

@@ -1,0 +1,26 @@
+.list {
+    list-style: none;
+    display: flex;
+    padding: 20px 0;
+
+    .item {
+        cursor: pointer;
+        margin-right: 10px;
+        transition: color 0.2s ease-in;
+
+        &:hover {
+            color: aqua;
+        }
+
+        .home {
+            color: dimgray;
+            font-size: 14px; 
+            text-decoration: none;
+        }
+
+        .router-link-active {
+            color: darkturquoise;
+        }
+        
+    }
+}

@@ -1,15 +1,16 @@
 <div class="entry">
     <div class="entry__info">
-        <span class="entry__time">"Время создания"</span>
+        <span class="entry__time">Время создания: {{ entryData.time | date:'medium' : 'ru-RUS' }}</span>
 
         <div class="entry__hero">
-            <p class="entry__text">Здесь отображается основной текст записи</p>
+            <div class="entry__text">{{ entryData.paragraph }}</div>
+            <!-- <textarea class="entry__text" rows="6" cols="125">Здесь отображается основной текст записи</textarea> -->
         </div>
     </div>
 
     <figure class="entry__figure">
-        <img src="" alt="Тут появляется прикрепленное изображение если оно есть в записи" 
-            width="120px" height="120px"
+        <img [src]="entryData.picture" alt="Фото" 
+            width="120px"
             class="entry__img">
     </figure>
 </div>

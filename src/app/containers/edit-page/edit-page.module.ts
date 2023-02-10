@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DiaryComponent } from './diary.component';
-import { EntryModule } from '../entry/entry.module';
+import { EditPageComponent } from './edit-page.component';
 import { RouterModule } from '@angular/router';
-import { DiaryRoutingModule } from './diary-routing.module';
+import { EditPageRoutingModule } from './edit-page-routing.module';
+import { EntryModule } from '../entry/entry.module';
 import { ButtonModule } from 'src/app/components/button/button.module';
 
 
 
 @NgModule({
   declarations: [
-    DiaryComponent
+    EditPageComponent
   ],
   imports: [
     CommonModule,
-    EntryModule,
     RouterModule,
-    DiaryRoutingModule,
+    EditPageRoutingModule,
+    EntryModule,
     ButtonModule
   ],
   exports: [
-    DiaryComponent
-  ]  
+    EditPageComponent
+  ]
 })
 
-export class DiaryModule { }
+export class EditPageModule { }
