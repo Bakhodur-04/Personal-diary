@@ -4,6 +4,11 @@
     background-color: rgb(166, 255, 200);
     min-height: 200px;
 
+    &__btn-contaier {
+        display: flex;
+        justify-content: end;
+    }
+
     &__list {
         display: flex;
         flex-direction: column;

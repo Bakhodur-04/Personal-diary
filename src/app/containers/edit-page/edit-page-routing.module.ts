@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { EditPageComponent } from './edit-page.component';
 
+
 const routes: Routes = [
   {
     path: 'edit',
@@ -17,7 +18,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule
+  ]
 })
 
 export class EditPageRoutingModule { }

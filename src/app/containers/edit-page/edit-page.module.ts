@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { EditPageComponent } from './edit-page.component';
 import { RouterModule } from '@angular/router';
 import { EditPageRoutingModule } from './edit-page-routing.module';
-import { EntryModule } from '../entry/entry.module';
 import { ButtonModule } from 'src/app/components/button/button.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,8 +16,8 @@ import { ButtonModule } from 'src/app/components/button/button.module';
     CommonModule,
     RouterModule,
     EditPageRoutingModule,
-    EntryModule,
-    ButtonModule
+    ButtonModule,
+    FormsModule
   ],
   exports: [
     EditPageComponent

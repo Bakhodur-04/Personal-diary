@@ -1,10 +1,9 @@
 <div class="entry">
     <div class="entry__info">
-        <span class="entry__time">Время создания: {{ entryData.time | date:'medium' : 'ru-RUS' }}</span>
+        <span class="entry__time">Время создания: {{ entryData.time | date:'full':'+7':'ru-RU' }}</span>
 
         <div class="entry__hero">
-            <div class="entry__text">{{ entryData.paragraph }}</div>
-            <!-- <textarea class="entry__text" rows="6" cols="125">Здесь отображается основной текст записи</textarea> -->
+            <angular-editor [(ngModel)]="entryData.paragraph" [config]="config"></angular-editor>
         </div>
     </div>
 
@@ -14,3 +13,5 @@
             class="entry__img">
     </figure>
 </div>
+
+<app-button [color]="'default'" [title]="'Удалить'" (click)="deleteEntry(entryData)"></app-button>

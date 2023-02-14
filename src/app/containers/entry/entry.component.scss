@@ -6,6 +6,7 @@
     border-radius: 10px;
     padding: 20px;
     background-color: rgb(220, 255, 235);
+    cursor: pointer;
 
     &__time {
         display: block;
@@ -22,7 +23,7 @@
         border-radius: 10px;
         margin-right: 10px;
         background-color: #fff;
-        padding: 12px;
+        padding: 10px 12px 12px;
     }
 
     &__text {

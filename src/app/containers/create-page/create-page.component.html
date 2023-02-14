@@ -1,0 +1,33 @@
+<!-- <app-entry [isSave]="isSave"></app-entry> -->
+
+<div class="entry">
+    <div class="entry__info">
+        <span class="entry__time">Время создания: </span>
+
+        <div class="entry__hero">
+            <div id="editorjs" class="entry__text"></div>
+
+            <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+        </div>
+    </div>
+
+    <figure class="entry__figure">
+        <img src="" 
+            alt="Тут появляется прикрепленное изображение если оно есть в записи" 
+            width="120px" height="120px"
+            class="entry__img">
+    </figure>
+</div>
+
+
+<app-button
+    [color]="'default'"
+    [title]="'Сохранить'" 
+    (click)="onSubmit()"
+></app-button>
+
+<app-button
+    [color]="'default'"
+    [title]="'Отменить'" 
+    (click)="onCancel()"
+></app-button>

@@ -1,7 +1,8 @@
 export interface Entry {
     id: number,
-    time: Date,
+    time: number,
     paragraph: any,
-    picture?: string
+    picture?: string,
+    login?: string
 }
   

@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 
 export class TopBarComponent {
+  path!: string;
 
   constructor(private router: Router, private route: ActivatedRoute, public auth: AuthService) {}
   

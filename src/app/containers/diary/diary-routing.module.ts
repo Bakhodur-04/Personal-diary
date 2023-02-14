@@ -14,10 +14,6 @@ export const routes: Routes = [
         path: '',
         component: DiaryComponent,
         pathMatch: 'full'
-      },
-      {
-        path: 'edit',
-        component: EditPageComponent,
       }
     ]
   },

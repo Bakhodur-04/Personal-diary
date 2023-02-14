@@ -1,14 +1,18 @@
 <div class="diary">
-    <app-button [title]="'Выйти'" (click)="logOut()"></app-button>
-
+    <div class="diary__btn-contaier">
+        <app-button [title]="'Выйти'" (click)="logOut()"></app-button>
+    </div>
+    
     <ul class="diary__list">
+        <!-- <p *ngIf="entries==[]" class="load">Загрузка...</p> -->
+
         <li class="diary__item" *ngFor="let entry of entries; let i = index">
             <app-entry id="editorjs1" class="diary__entry" 
-                *ngIf="entries"
-                
+                *ngIf="entries or "
+                [routerLink]="['/edit', entry.id]"
                 [entryData]="entries[i]"
+                [queryParams]="{id: entry.id}"
             ></app-entry>
         </li>
     </ul>
 </div>
-<!-- [routerLink]="['/edit', ]" -->

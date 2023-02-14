@@ -2,6 +2,8 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/cor
 import { Entry } from 'src/app/interface/entry.data';
 import EditorJS from '@editorjs/editorjs';
 import { DataService } from 'src/app/services/data.service';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
+
 
 @Component({
   selector: 'app-entry',
@@ -10,9 +12,14 @@ import { DataService } from 'src/app/services/data.service';
 })
 
 export class EntryComponent implements OnInit, OnChanges {
-  
+
   editor!: any;
   entry!: Entry;
+
+  config: AngularEditorConfig = {
+    editable: false,
+    showToolbar: false,
+  };
   
   @Input() isSave!: boolean;
   @Input() entryData!: Entry;
@@ -23,6 +30,7 @@ export class EntryComponent implements OnInit, OnChanges {
     // this.editor = new EditorJS({
 
     //   holder: 'editorjs',
+    //   readOnly: true,
     //   inlineToolbar: true
     // });
   }
@@ -42,6 +50,10 @@ export class EntryComponent implements OnInit, OnChanges {
     //     console.log('Saving failed: ', error)
     //   });
     // }
+  }
+
+  deleteEntry(entry: Entry) {
+    this.dataService.removeEntry(entry.id)
   }
 
 }
