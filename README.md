@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
 
+## Preparatiom before starting application
+
+Run `npm i` for installing packages.
+
 ## Development server
 
 Run `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -14,12 +18,13 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Logins and passwords:
 
-  // example@example.ru
-  // qwerty123
+login: example3@exampl3e.ru - account with entries
+password: firebase456
 
-  // example2@exampl2e.ru
-  // firebase456
+login: example2@exampl2e.ru
+password: firebase456
   
-  // example3@exampl3e.ru
-  // firebase456
+login: example@example.ru
+password: qwerty123
