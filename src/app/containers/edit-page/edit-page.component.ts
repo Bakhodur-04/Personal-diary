@@ -9,40 +9,49 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./edit-page.component.scss']
 })
 
+/**
+ * Class for editing entry.
+ */
 export class EditPageComponent implements OnInit{
   entry: Entry = {
-    id: 0,
+    id: '',
     time: 0,
     paragraph: ''
   };
-  entryId!: number;
+  entryId!: string;
   index!: number;
   lol!: Entry;
 
+  /**
+   * Constructor of EditPageComponent class.
+   * @param dataService - Service of the database connection.
+   * @param route - Object for query parametrs.
+   * @param router - Object for navigation.
+   */
   constructor(public dataService: DataService, private route: ActivatedRoute, private router: Router) {
-    this.entryId = this.route.snapshot.queryParams['id']
-
-    // this.dataService.getEntries().subscribe((data) => {
-    //   let lo = data.find(item => item.id == this.entryId);
-
-    //   this.lol = {
-    //     id: lo!.id,
-    //     time: lo!.time,
-    //     paragraph: lo?.paragraph
-    //   }
-
-    // })
+    this.entryId = this.route.snapshot.params['id']
 
     this.dataService.getEntry(this.entryId).subscribe((item) => {
       this.entry = item
     })
   }
 
-  ngOnInit(): void {
-  
+  ngOnInit(): void {}
+
+  /**
+   * Save entry in database.
+   * @param id - Id entry.
+   * @param entry - Record.
+   */
+  onSave(id: string, entry: Entry): void {
+    this.dataService.updateEntry(this.entryId, entry);
+    this.router.navigate(['/diary'])
   }
 
-  onCancel() {
+  /**
+   * Cancel saving of entry.
+   */
+  onCancel(): void {
     this.router.navigate(['/diary'])
   }
 }

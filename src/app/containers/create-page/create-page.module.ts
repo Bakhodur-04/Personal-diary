@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     AngularEditorModule,
+    HttpClientModule
   ],
   exports: [
     CreatePageComponent

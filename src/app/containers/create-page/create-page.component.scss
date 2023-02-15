@@ -16,7 +16,7 @@
     &__hero {
         display: flex;
         flex-direction: column;
-        min-height: 112px;
+        min-height: 140px;
         width: 966px;
         border: 1px solid rgba(0, 78, 0, 0.295);
         border-radius: 10px;
@@ -31,7 +31,7 @@
     }
 
     &__figure {
-        width: 140px;
+        width: 175px;
         height: 140px;
         display: flex;
         align-items: center;

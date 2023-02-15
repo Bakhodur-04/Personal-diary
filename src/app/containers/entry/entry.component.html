@@ -8,10 +8,12 @@
     </div>
 
     <figure class="entry__figure">
-        <img [src]="entryData.picture" alt="Фото" 
+        <img [src]="entryData.picture" alt="Фото"
             width="120px"
             class="entry__img">
     </figure>
 </div>
+
+<app-button [color]="'default'" [title]="'Изменить'" (click)="change(entryData.id)"></app-button>
 
 <app-button [color]="'default'" [title]="'Удалить'" (click)="deleteEntry(entryData)"></app-button>

@@ -1,5 +1,8 @@
+/**
+ * Interface for entry.
+ */
 export interface Entry {
-    id: number,
+    id: string,
     time: number,
     paragraph: any,
     picture?: string,

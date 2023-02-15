@@ -9,11 +9,19 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./diary.component.scss']
 })
 
+/**
+ * Class for diary component.
+ */
 export class DiaryComponent implements OnInit {
   entries: Entry[] = [];
   login!: string;
   loading: boolean = true;
 
+  /**
+   * Constructor for DiaryComponent class.
+   * @param dataService - Service for connection firestore.
+   * @param auth - Service for authentification.
+   */
   constructor(public dataService: DataService, private auth: AuthService) {  
     this.login = this.auth.loginName;
     
@@ -32,11 +40,12 @@ export class DiaryComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
-  logOut() {
+  /**
+   * Method for login out.
+   */
+  logOut(): void {
     this.auth.logOut()
   }
 }

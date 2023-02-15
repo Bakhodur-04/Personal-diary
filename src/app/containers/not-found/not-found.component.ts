@@ -5,6 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss']
 })
+
+/**
+ * Class for not found component.
+ */
 export class NotFoundComponent {
 
 }

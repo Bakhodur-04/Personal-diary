@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { Entry } from 'src/app/interface/entry.data';
-import EditorJS from '@editorjs/editorjs';
 import { DataService } from 'src/app/services/data.service';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,6 +11,9 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   styleUrls: ['./entry.component.scss']
 })
 
+/**
+ * Class for Entry component.
+ */
 export class EntryComponent implements OnInit, OnChanges {
 
   editor!: any;
@@ -24,36 +27,31 @@ export class EntryComponent implements OnInit, OnChanges {
   @Input() isSave!: boolean;
   @Input() entryData!: Entry;
 
-  constructor(private dataService: DataService) {}
+  /**
+   * Constructor for EntryComponent.
+   * @param dataService - Service for connection database.
+   * @param router - Object for navigation.
+   */
+  constructor(private dataService: DataService, private router: Router) {}
 
-  ngOnInit(): void {
-    // this.editor = new EditorJS({
+  ngOnInit(): void {}
 
-    //   holder: 'editorjs',
-    //   readOnly: true,
-    //   inlineToolbar: true
-    // });
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    // if (this.isSave == true) {
-    //   this.editor.save().then((outputData: any) => {
-    //     this.entry = {
-    //       id: outputData.blocks[0].id, 
-    //       time: outputData.time, 
-    //       paragraph: outputData.blocks[0].data.text, 
-    //     };
-    //     console.log(this.entry)
-    //     console.log('Article data: ', outputData)
-    //     this.dataService.addEntry(this.entry)
-    //   }).catch((error: any) => {
-    //     console.log('Saving failed: ', error)
-    //   });
-    // }
-  }
-
-  deleteEntry(entry: Entry) {
+  /**
+   * Method for deleting entry.
+   * @param entry - Record.
+   */
+  deleteEntry(entry: Entry): void {
     this.dataService.removeEntry(entry.id)
+  }
+
+  /**
+   * Method for change navigation.
+   * @param id - Entry id.
+   */
+  change(id: string): void {
+    this.router.navigate(['/edit', id])
   }
 
 }

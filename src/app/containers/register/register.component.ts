@@ -6,12 +6,24 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
+
+/**
+ * Class for registration.
+ */
 export class RegisterComponent {
   email: string = '';
   password: string = '';
 
+  /**
+   * Constructor for RegistrationComponent class.
+   * @param auth - Object for authentification.
+   */
   constructor(private auth: AuthService) {}
 
+  /**
+   * Method for registration.
+   * @returns - Registration user.
+   */
   register() {
     if (this.email == '') {
       alert('Пожалуйста введите почту')

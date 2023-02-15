@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { EditPageRoutingModule } from './edit-page-routing.module';
 import { ButtonModule } from 'src/app/components/button/button.module';
 import { FormsModule } from '@angular/forms';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 
 
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     EditPageRoutingModule,
     ButtonModule,
-    FormsModule
+    FormsModule,
+    AngularEditorModule
   ],
   exports: [
     EditPageComponent

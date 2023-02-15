@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
+/**
+ * Class for app component.
+ */
 export class AppComponent {
   title = 'personal-diary';
 }

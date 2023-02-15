@@ -6,13 +6,25 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 
+/**
+ * Class for authentification.
+ */
 export class AuthService {
   isLogin!: boolean;
   loginName!: string;
 
+  /**
+   * Constructor of AuthService class.
+   * @param fireAuth - Object for authentification.
+   * @param router - Object for navigation.
+   */
   constructor(private fireAuth: AngularFireAuth, private router: Router) { }
 
-  // login method
+  /**
+   * Method for authorisation.
+   * @param email - User email.
+   * @param password - User password.
+   */
   login(email: string, password: string) {
     this.fireAuth.signInWithEmailAndPassword(email, password).then( () => {
       localStorage.setItem('token', 'true');
@@ -25,7 +37,11 @@ export class AuthService {
     })
   }
 
-  // register method
+  /**
+   * Method for registration.
+   * @param email - User email.
+   * @param password - User password.
+   */
   register(email: string, password: string) {
     this.fireAuth.createUserWithEmailAndPassword(email, password).then( () => {
       alert('Registration Successful!')
@@ -36,7 +52,9 @@ export class AuthService {
     })
   }
   
-  // sign out
+  /**
+   * Method for log out.
+   */
   logOut() {
     this.fireAuth.signOut().then( () => {
       localStorage.removeItem('token');
@@ -46,10 +64,4 @@ export class AuthService {
       alert(error.message);
     })
   }
-  
-  // example@example.ru
-  // qwerty123
-
-  // example2@exampl2e.ru
-  // firebase456
 }
