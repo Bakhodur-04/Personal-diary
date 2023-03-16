@@ -1,5 +1,7 @@
 # PersonalDiary
 
+## It was free access to firebase. Now it's over.
+
 ## Logins and passwords:
 
 login: example3@exampl3e.ru - account with entries
